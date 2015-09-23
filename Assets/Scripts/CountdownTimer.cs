@@ -5,8 +5,9 @@ using UnityEngine.UI;
 public class CountdownTimer : MonoBehaviour {
 
 	public Text countdownText;
-	public float seconds, minutes;
-	//public float totalTime = 60f;
+	public static float seconds;
+	public static float minutes;
+	//public float timeLimit = 5f;
 	// Use this for initialization
 	void Start () {
 		countdownText = GetComponent<Text>() as Text;
@@ -17,6 +18,7 @@ public class CountdownTimer : MonoBehaviour {
 		minutes = (int)(Time.timeSinceLevelLoad / 60f);
 		seconds = (int)(Time.timeSinceLevelLoad % 60f);
 		countdownText.text = minutes.ToString("00") + ":" + seconds.ToString("00");
+
 	
 	}
 }
